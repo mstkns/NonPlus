@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "token.h"
 
+// TODO: Extend this once more token names are added
 char *string (Token_Name name) {
    return "LITERAL";
 }
