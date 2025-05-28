@@ -7,6 +7,8 @@ typedef enum {
 	LITERAL
 } Token_Name;
 
+char *string (Token_Name name);
+
 typedef struct {
 	Token_Name name;
 	const char *value;
