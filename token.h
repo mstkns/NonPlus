@@ -7,12 +7,14 @@ typedef enum {
    LITERAL
 } Token_Name;
 
-char *string (Token_Name name);
-
 typedef struct {
    Token_Name name;
    const char *value;
    uint8_t length;
 } Token;
+
+char *string (Token_Name name);
+
+void display (Token t);
 
 #endif // TOKEN_H
