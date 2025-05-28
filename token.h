@@ -4,15 +4,15 @@
 #include <stdint.h>
 
 typedef enum {
-	LITERAL
+   LITERAL
 } Token_Name;
 
 char *string (Token_Name name);
 
 typedef struct {
-	Token_Name name;
-	const char *value;
-	uint8_t length;
+   Token_Name name;
+   const char *value;
+   uint8_t length;
 } Token;
 
 #endif // TOKEN_H
