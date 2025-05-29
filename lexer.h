@@ -2,6 +2,7 @@
 #define LEXER_H
 
 #include <stddef.h>
+#include "token.h"
 
 typedef struct {
    const char *content;
@@ -10,5 +11,7 @@ typedef struct {
 } Lexer;
 
 Lexer new_lexer (const char *content);
+
+Token next_token (Lexer *l);
 
 #endif // LEXER_H
