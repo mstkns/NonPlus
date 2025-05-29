@@ -5,6 +5,7 @@
 char *string (Token_Name name) {
    switch (name) {
       case LITERAL: return "LITERAL";
+      case CONTROL: return "CONTROL";
       case UNKNOWN: return "UNKNOWN";
    }
 }
