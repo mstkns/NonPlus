@@ -18,18 +18,21 @@ Token next_token (Lexer *l) {
       l->cursor++;
    }
 
+   // Initialize token
    Token t = {
       .name   = UNKNOWN,
       .value  = &l->content [l->cursor],
       .length = 0
    };
 
+   // Handle null terminator
    if (l->content [l->cursor] == '\0') {
       t.name = CONTROL;
       l->cursor++;
       t.length++;
    } 
 
+   // Handle integer literal
    if (isdigit (l->content [l->cursor])) {
       t.name = LITERAL;
       l->cursor++;
