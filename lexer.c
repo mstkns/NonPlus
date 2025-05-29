@@ -14,7 +14,7 @@ Lexer new_lexer (const char *content) {
 Token next_token (Lexer *l) {
 
    // Skip whitespace
-   while (l->cursor < l->content_length && isspace (l->content [l->cursor])) {
+   while (l->cursor < l->content_length && isspace (l -> content [l -> cursor])) {
       l->cursor++;
    }
 
@@ -30,6 +30,7 @@ Token next_token (Lexer *l) {
       t.name = CONTROL;
       l->cursor++;
       t.length++;
+      return t;
    } 
 
    // Handle integer literal
@@ -41,9 +42,26 @@ Token next_token (Lexer *l) {
          l->cursor++;
          t.length++;
       }
+      return t;
    }
-   
-   return t;
+
+   // Handle string literal
+   if (l->content [l->cursor] == '"') {
+      l->cursor++;
+      t.value++; // Skip quotation mark
+      while (l->cursor < l->content_length) {
+         l->cursor++;
+         t.length++;
+         if (l->content [l->cursor] == '"') {
+            t.name = LITERAL;
+            l->cursor++;
+            break;
+         }
+      }
+      return t;
+   }
+
+   return t;   
 
 }
 
