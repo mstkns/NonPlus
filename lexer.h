@@ -9,4 +9,6 @@ typedef struct {
    size_t cursor;
 } Lexer;
 
+Lexer new_lexer (const char *content);
+
 #endif // LEXER_H
