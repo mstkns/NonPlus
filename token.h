@@ -4,7 +4,8 @@
 #include <stdint.h>
 
 typedef enum {
-   LITERAL
+   LITERAL,
+   UNKNOWN
 } Token_Name;
 
 typedef struct {
