@@ -24,6 +24,12 @@ Token next_token (Lexer *l) {
       .length = 0
    };
 
+   if (l->content [l->cursor] == '\0') {
+      t.name = CONTROL;
+      l->cursor++;
+      t.length++;
+   } 
+
    if (isdigit (l->content [l->cursor])) {
       t.name = LITERAL;
       l->cursor++;

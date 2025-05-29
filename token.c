@@ -7,9 +7,17 @@ char *string (Token_Name name) {
       case LITERAL: return "LITERAL";
       case CONTROL: return "CONTROL";
       case UNKNOWN: return "UNKNOWN";
+      default:      return "UNKNOWN";
    }
 }
 
 void display (Token t) {
-   printf ("(%s, %.*s)\n", string (t.name), t.length, t.value);
+
+   printf ("(%s, ", string (t.name));
+
+   if (*t.value == '\0') {
+      printf ("\\0)\n");
+   } else {
+      printf ("%.*s)\n", (int) t.length, t.value);   
+   }
 }
