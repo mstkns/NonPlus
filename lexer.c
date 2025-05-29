@@ -19,8 +19,8 @@ Token next_token (Lexer *l) {
    }
 
    Token t = {
-      .name  = UNKNOWN,
-      .value = &l->content [l->cursor],
+      .name   = UNKNOWN,
+      .value  = &l->content [l->cursor],
       .length = 0
    };
 
