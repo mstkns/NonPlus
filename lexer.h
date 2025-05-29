@@ -14,4 +14,6 @@ Lexer new_lexer (const char *content);
 
 Token next_token (Lexer *l);
 
+void display_all_tokens (Lexer *l);
+
 #endif // LEXER_H

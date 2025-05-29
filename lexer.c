@@ -43,3 +43,9 @@ Token next_token (Lexer *l) {
    return t;
 
 }
+
+void display_all_tokens (Lexer *l) {
+   while (l->cursor < l->content_length) {
+      display (next_token (l));
+   }
+}
