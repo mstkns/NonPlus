@@ -4,10 +4,11 @@
 // TODO: Extend this once more token names are added
 char *string (Token_Name name) {
    switch (name) {
-      case LITERAL: return "LITERAL";
-      case CONTROL: return "CONTROL";
-      case UNKNOWN: return "UNKNOWN";
-      default:      return "UNKNOWN";
+      case LITERAL:    return "LITERAL";
+      case IDENTIFIER: return "IDENTIFIER";
+      case CONTROL:    return "CONTROL";
+      case UNKNOWN:    return "UNKNOWN";
+      default:         return "UNKNOWN";
    }
 }
 

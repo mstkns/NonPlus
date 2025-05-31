@@ -5,6 +5,7 @@
 
 typedef enum {
    LITERAL,
+   IDENTIFIER,
    CONTROL,
    UNKNOWN
 } Token_Name;
