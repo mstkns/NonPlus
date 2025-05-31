@@ -61,7 +61,19 @@ Token next_token (Lexer *l) {
       return t;
    }
 
-   return t;   
+   // Handle identifier
+   if (isalpha (l->content [l->cursor]) || l->content [l->cursor] == '_') {
+      t.name = IDENTIFIER;
+      l->cursor++;
+      t.length++;
+      while (isalnum (l->content [l->cursor]) || l->content [l->cursor] == '_') {
+         l->cursor++;
+         t.length++;
+      }
+      return t;      
+   }
+
+   return t; 
 
 }
 
